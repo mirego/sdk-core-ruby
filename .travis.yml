@@ -1,6 +1,16 @@
+# Ruby baby!
+language: 'ruby'
+
+# Use container-based infrastructure
+sudo: false
+
+# Cache Bundler install process
+cache: 'bundler'
+
+# Only build on Ruby 2.3.8
 rvm:
-  - 2.2.5
-  - 2.3.1
-notifications:
-  recipients:
-    - DL-PP-Platform-Ruby-SDK@ebay.com
+  - '2.3.8'
+
+# Run RSpec examples
+script:
+  - 'echo "Running specs" && bundle exec rspec'
